@@ -1,7 +1,8 @@
 import React, { useState } from "react";
 // import Accordian from "./components/Accordian";
 // import Search from "./components/Search";
-import Dropdown from "./components/Dropdown";
+// import Dropdown from "./components/Dropdown";
+import Translate from "./components/Translate";
 
 // const items = [
 //   {
@@ -34,14 +35,14 @@ const options = [
 ];
 
 const App = () => {
-  const [selected, setSelected] = useState(options[0]);
-  const [showDropDown, setShowDropDown] = useState(true);
+  // const [selected, setSelected] = useState(options[0]);
+  // const [showDropDown, setShowDropDown] = useState(true);
 
   return (
     <div>
       {/* <Accordian items={items} /> */}
       {/* <Search /> */}
-      <button onClick={() => setShowDropDown(!showDropDown)}>
+      {/* <button onClick={() => setShowDropDown(!showDropDown)}>
         Toggle Dropdown
       </button>
       {showDropDown ? (
@@ -50,7 +51,8 @@ const App = () => {
           onSelectionChange={setSelected}
           options={options}
         />
-      ) : null}
+      ) : null} */}
+      <Translate />
     </div>
   );
 };
