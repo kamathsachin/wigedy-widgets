@@ -1,23 +1,24 @@
 import React, { useState } from "react";
-// import Accordian from "./components/Accordian";
-// import Search from "./components/Search";
-// import Dropdown from "./components/Dropdown";
+import Accordian from "./components/Accordian";
+import Search from "./components/Search";
+import Dropdown from "./components/Dropdown";
 import Translate from "./components/Translate";
+import Route from "./components/Route";
 
-// const items = [
-//   {
-//     title: "What is React?",
-//     content: "React is a front-end Javascript Framework",
-//   },
-//   {
-//     title: "Why use React?",
-//     content: "React is a JS library among engineers",
-//   },
-//   {
-//     title: "How do you use React?",
-//     content: "You use React by creating components",
-//   },
-// ];
+const items = [
+  {
+    title: "What is React?",
+    content: "React is a front-end Javascript Framework",
+  },
+  {
+    title: "Why use React?",
+    content: "React is a JS library among engineers",
+  },
+  {
+    title: "How do you use React?",
+    content: "You use React by creating components",
+  },
+];
 
 const options = [
   {
@@ -35,24 +36,26 @@ const options = [
 ];
 
 const App = () => {
-  // const [selected, setSelected] = useState(options[0]);
-  // const [showDropDown, setShowDropDown] = useState(true);
+  const [selected, setSelected] = useState(options[0]);
 
   return (
     <div>
-      {/* <Accordian items={items} /> */}
-      {/* <Search /> */}
-      {/* <button onClick={() => setShowDropDown(!showDropDown)}>
-        Toggle Dropdown
-      </button>
-      {showDropDown ? (
+      <Route path="/">
+        <Accordian items={items} />
+      </Route>
+      <Route path="/list">
+        <Search />
+      </Route>
+      <Route path="/dropdown">
         <Dropdown
           selected={selected}
           onSelectionChange={setSelected}
           options={options}
         />
-      ) : null} */}
-      <Translate />
+      </Route>
+      <Route path="/translate">
+        <Translate />
+      </Route>
     </div>
   );
 };
